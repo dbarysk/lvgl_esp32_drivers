@@ -81,7 +81,7 @@ void ili9488_init(void)
 	#if ESP_IDF_VERSION_MAJOR >= 5
 	esp_rom_gpio_pad_select_gpio(ILI9488_DC);
 	#else
-	gpio_pad_select_gpio(ILI9488_DC);
+	esp_rom_gpio_pad_select_gpio(ILI9488_DC);
 	#endif
 	gpio_set_direction(ILI9488_DC, GPIO_MODE_OUTPUT);
 
@@ -89,7 +89,7 @@ void ili9488_init(void)
 	#if ESP_IDF_VERSION_MAJOR >= 5
 	esp_rom_gpio_pad_select_gpio(ILI9488_RST);
 	#else
-	gpio_pad_select_gpio(ILI9488_RST);
+	esp_rom_gpio_pad_select_gpio(ILI9488_RST);
 	#endif
 	gpio_set_direction(ILI9488_RST, GPIO_MODE_OUTPUT);
 

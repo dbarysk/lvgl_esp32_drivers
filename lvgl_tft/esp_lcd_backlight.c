@@ -78,7 +78,7 @@ disp_backlight_h disp_backlight_new(const disp_backlight_config_t *config)
         esp_rom_gpio_pad_select_gpio(config->gpio_num);
         ESP_ERROR_CHECK(gpio_set_direction(config->gpio_num, GPIO_MODE_OUTPUT));
         #else
-        gpio_pad_select_gpio(config->gpio_num);
+        esp_rom_gpio_pad_select_gpio(config->gpio_num);
         ESP_ERROR_CHECK(gpio_set_direction(config->gpio_num, GPIO_MODE_OUTPUT));
         gpio_matrix_out(config->gpio_num, SIG_GPIO_OUT_IDX, config->output_invert, false);
         #endif
