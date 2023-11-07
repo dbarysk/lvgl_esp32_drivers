@@ -87,7 +87,7 @@ endif()
 if("${IDF_VERSION_MAJOR}.${IDF_VERSION_MINOR}" VERSION_GREATER_EQUAL "5.0")
     idf_component_register( SRCS ${SOURCES}
                             INCLUDE_DIRS ${LVGL_INCLUDE_DIRS}
-                            REQUIRES lvgl driver)
+                            REQUIRES esp_common lvgl driver)
     set(USE_PORT_TICK_PERIOD_MS)                            
 else()
 idf_component_register( SRCS ${SOURCES}
